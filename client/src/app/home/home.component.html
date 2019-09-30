@@ -10,8 +10,8 @@
 
   <div class="login-info">
     <div *ngIf="isLoggedIn">
-      Hello {{currentUserName}}
-      <a href="#" (click)="handleSignOut($event);">Sign Out</a>
+      Hello {{ currentUserName }}
+      <a href="#" (click)="handleSignOut($event)">Sign Out</a>
     </div>
     <div *ngIf="!isLoggedIn">
       <a routerLink="/sign-in">Sign In</a>
@@ -20,9 +20,7 @@
 
   <div class="form-group">
     <label for="file">Choose File</label>
-    <input type="file"
-           id="file"
-           (change)="handleFileInput($event.target.files)">
+    <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
   </div>
 
   <div class="uploaded-image-container">

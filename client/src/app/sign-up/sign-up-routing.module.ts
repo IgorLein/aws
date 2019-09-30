@@ -6,9 +6,7 @@ import { SignUpComponent } from './sign-up.component';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
-  Shell.childRoutes([
-    { path: 'sign-up', component: SignUpComponent, data: { title: extract('Sign Up') } }
-  ])
+  Shell.childRoutes([{ path: 'sign-up', component: SignUpComponent, data: { title: extract('Sign Up') } }])
 ];
 
 @NgModule({

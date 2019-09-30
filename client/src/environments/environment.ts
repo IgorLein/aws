@@ -19,7 +19,7 @@ export const environment = {
   cognitoConfig: {
     userPoolId: 'us-east-1_SfBETCXLo',
     region: 'us-east-1',
-    clientId: '6evujm4hmafima832a8rrui77p',
+    clientId: '6evujm4hmafima832a8rrui77p'
   }
 };
 

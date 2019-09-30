@@ -6,9 +6,7 @@ import { SendMailComponent } from './send-mail.component';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
-  Shell.childRoutes([
-    { path: 'send-mail', component: SendMailComponent, data: { title: extract('Send Mail') } }
-  ])
+  Shell.childRoutes([{ path: 'send-mail', component: SendMailComponent, data: { title: extract('Send Mail') } }])
 ];
 
 @NgModule({

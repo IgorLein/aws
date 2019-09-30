@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
   cognitoUser: any = null;
   currentUserName = '';
 
-  constructor(private quoteService: QuoteService,
-    private http: Http) {}
+  constructor(private quoteService: QuoteService, private http: Http) {}
 
   ngOnInit() {
     this.isLoading = true;
@@ -40,8 +39,8 @@ export class HomeComponent implements OnInit {
 
   initCurrentCognitoUser() {
     const data = {
-      UserPoolId : environment.cognitoConfig.userPoolId,
-      ClientId : environment.cognitoConfig.clientId
+      UserPoolId: environment.cognitoConfig.userPoolId,
+      ClientId: environment.cognitoConfig.clientId
     };
     const userPool = new CognitoUserPool(data);
     this.cognitoUser = userPool.getCurrentUser();
@@ -56,7 +55,7 @@ export class HomeComponent implements OnInit {
       if (err) {
         console.log('getSession error');
         alert(err);
-          return;
+        return;
       }
       console.log('user is logged in');
       this.isLoggedIn = session.isValid();
@@ -92,11 +91,9 @@ export class HomeComponent implements OnInit {
     const endpoint = `${environment.serverUrl}/upload`;
     const formData: FormData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
-    return this.http
-      .post(endpoint, formData)
-      .subscribe(res => {
-        const { data } = res.json();
-        this.uploadedImageSrc = data.Location;
-      });
+    return this.http.post(endpoint, formData).subscribe(res => {
+      const { data } = res.json();
+      this.uploadedImageSrc = data.Location;
+    });
   }
 }

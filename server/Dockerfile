@@ -1,8 +1,5 @@
 FROM node:10
 
-ENV AWS_ACCESS_KEY_ID AKIAQPN3Y2R5BTBZLO4K
-ENV AWS_SECRET_ACCESS_KEY 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
-
 # Create app directory
 WORKDIR /usr/src/app
 

@@ -22,8 +22,8 @@ export class SignUpComponent {
     }
 
     const poolData = {
-      UserPoolId : environment.cognitoConfig.userPoolId,
-      ClientId : environment.cognitoConfig.clientId
+      UserPoolId: environment.cognitoConfig.userPoolId,
+      ClientId: environment.cognitoConfig.clientId
     };
     const userPool = new CognitoUserPool(poolData);
 
@@ -49,12 +49,12 @@ export class SignUpComponent {
     attributeList.push(attributePersonalName);
     attributeList.push(attributePhoneNumber);
 
-    userPool.signUp(this.email, this.password, attributeList, null, function(err: any, result: any){
-        if (err) {
-            alert(err);
-            return;
-        }
-        window.location.replace('/');
+    userPool.signUp(this.email, this.password, attributeList, null, function(err: any, result: any) {
+      if (err) {
+        alert(err);
+        return;
+      }
+      window.location.replace('/');
     });
   }
 }

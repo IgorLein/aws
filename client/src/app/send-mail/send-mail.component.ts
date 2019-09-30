@@ -18,8 +18,7 @@ export class SendMailComponent implements OnInit {
   invoiceId = '';
   amount = '';
 
-  constructor(private quoteService: QuoteService,
-    private http: Http) {}
+  constructor(private quoteService: QuoteService, private http: Http) {}
 
   ngOnInit() {
     this.isLoading = true;
@@ -36,16 +35,17 @@ export class SendMailComponent implements OnInit {
   }
 
   handleSendRequest() {
-    this.http.post('https://hay1oitv5j.execute-api.us-east-1.amazonaws.com/dev/hello/send/email', {
-      to: this.to,
-      subject: this.subject,
-      data: {
-        invoiceId: this.invoiceId,
-        amount: this.amount,
-      }
-    })
-    .subscribe(res => {
-      console.log(res.json());
-    });
+    this.http
+      .post('https://hay1oitv5j.execute-api.us-east-1.amazonaws.com/dev/hello/send/email', {
+        to: this.to,
+        subject: this.subject,
+        data: {
+          invoiceId: this.invoiceId,
+          amount: this.amount
+        }
+      })
+      .subscribe(res => {
+        console.log(res.json());
+      });
   }
 }
