@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div>
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email">
+  </div>
+  <div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name">
+  </div>
+  <div>
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="phone">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password">
+  </div>
+  <div>
+    <label>Confirmation</label>
+    <input type="password" [(ngModel)]="passwordConfirmation">
+  </div>
+  <button (click)="this.handleUserCreate();">Create a User</button>
+</div>

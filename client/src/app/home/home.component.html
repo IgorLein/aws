@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
+      <span translate>Hello world 3 !</span>
+    </h1>
+    <app-loader [isLoading]="isLoading"></app-loader>
+    <q [hidden]="isLoading">{{ quote }}</q>
+  </div>
+
+  <div class="login-info">
+    <div *ngIf="isLoggedIn">
+      Hello {{currentUserName}}
+      <a href="#" (click)="handleSignOut($event);">Sign Out</a>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <a routerLink="/sign-in">Sign In</a>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+  </div>
+
+  <div class="uploaded-image-container">
+    <img *ngIf="uploadedImageSrc" class="uploaded-image" [src]="uploadedImageSrc" />
+  </div>
+</div>
