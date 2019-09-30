@@ -9,7 +9,12 @@ import env from './.env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
-  serverUrl: 'https://api.chucknorris.io',
+  serverUrl: 'http://18.215.247.27:3000',
   defaultLanguage: 'en-US',
-  supportedLanguages: ['en-US', 'fr-FR']
+  supportedLanguages: ['en-US', 'fr-FR'],
+  cognitoConfig: {
+    userPoolId: 'us-east-1_SfBETCXLo',
+    region: 'us-east-1',
+    clientId: '6evujm4hmafima832a8rrui77p'
+  }
 };
